@@ -6,7 +6,7 @@
         content="content here">
   <meta name="keywords" content="Environment, MLLM, Agent, Reasoning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fill title here</title>
+  <title>          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A Scalable 2D Grid-based Game Benchmark for Multimodal Large Language Models</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -61,10 +61,10 @@
         </div>
         <div class="header-overlay"></div>
         <div class="header-content" style="height: 896px">
-          <h1 class="title is-1 publication-title" style="color: #f2f2f2">Change Title Here</h1>
+          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A Scalable 2D Grid-based Game Benchmark for Multimodal Large Language Models</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">AgentGrid Group</a>
+              <a href="https://keunhong.com">GridAgent Team</a>
             </span>
           </div>
 
@@ -122,31 +122,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Multimodal Large Language Models (MLLMs) integrate the linguistic capabilities of LLMs with the ability to process multimodal data, enabling them to address a wider array of tasks. However, a comprehensive and standardized benchmark for evaluating MLLMs' complex visual reasoning performance in multimodal tasks has yet to be established. We introduce GridAgent, a versatile 2D grid-based framework that serves as a benchmark for assessing five essential capabilities of MLLMs: \textbf{execution, perception reasoning, memory, learning, and planning}. The framework includes twelve unique game tasks specifically designed to avoid overlap with the model's pre-training corpus. Each task targets at least one core competency and is enriched with diverse semantic information. Additionally, the game layouts are randomly generated, ensuring a more rigorous and authentic assessment of the MLLMs' capabilities. Experimental results indicate that although certain MLLMs excel in specific capabilities, none exhibit a comprehensive skill set comparable to the human baseline.
           </p>
         </div>
       </div>
@@ -163,11 +139,11 @@
         <h2 class="title is-3">Environments</h2>
         <div class="env-grid">
           <div class="env-container">
-            <img src="static/images/classification_0.png"/>
+            <img src="static/images/classification_00.png"/>
             <p>Classification</p>
           </div>
           <div class="env-container">
-            <img src="static/images/counting_1.png"/>
+            <img src="static/images/counting_10.png"/>
             <p>Counting</p>
           </div>
           <div class="env-container">
@@ -175,11 +151,11 @@
             <p>Decode</p>
           </div>
           <div class="env-container">
-            <img src="static/images/memory_1.png"/>
+            <img src="static/images/memory_10.png"/>
             <p>Memory</p>
           </div>
           <div class="env-container">
-            <img src="static/images/puzzle_0.png"/>
+            <img src="static/images/puzzle_00.png"/>
             <p>Puzzle</p>
           </div>
           <div class="env-container">
@@ -191,7 +167,7 @@
             <p>Orientation</p>
           </div>
           <div class="env-container">
-            <img src="static/images/sorting_1.png"/>
+            <img src="static/images/sorting_10.png"/>
             <p>Sorting</p>
           </div>
           <div class="env-container">
@@ -199,7 +175,7 @@
             <p>Filling(Can See)</p>
           </div>
           <div class="env-container">
-            <img src="static/images/filling_1.png"/>
+            <img src="static/images/filling_cantsee.png"/>
             <p>Filling</p>
           </div>
           <div class="env-container">
@@ -207,7 +183,7 @@
             <p>Memory Decode</p>
           </div>
           <div class="env-container">
-            <img src="static/images/memory_sequence_1.png"/>
+            <img src="static/images/memory_sequence_10.png"/>
             <p>Memory Sequence</p>
           </div>
         </div>
@@ -229,8 +205,8 @@
             </label>
 
             <label class="checkbox">
-              <input type="checkbox" id="gemini" value="gemini"/>
-              Gemini-v1.5-flesh
+              <input type="checkbox" id="internvl" value="internvl"/>
+              Internvl-chat-v1.5
             </label>
 
             <label class="checkbox">
@@ -244,7 +220,7 @@
             </label>
 
             <label class="checkbox">
-              <input type="checkbox" id="intern" value="intern"/>
+              <input type="checkbox" id="internlm" value="internlm"/>
               InternLM-Xcomposer2-7b-chat
             </label>
 
@@ -258,10 +234,10 @@
               Qwen2-vl-7b
             </label>
 
-            <label class="checkbox">
+            <!-- <label class="checkbox">
               <input type="checkbox" id="random" value="random"/>
               Random
-            </label>
+            </label> -->
           </div>
           <canvas id="myChart"></canvas>
       </div>
@@ -343,102 +319,91 @@
   dataset = {
     'human': {
       label: 'Human Expert',
-      data: [70, 70, 70, 70, 70],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [100, 100, 100, 100, 100],
+      fill: false,
+      backgroundColor: 'rgba(32, 32, 32, 0.2)',
+      borderColor: 'rgb(32, 32, 32)',
+      pointBackgroundColor: 'rgb(32, 32, 32)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(32, 32, 32)'
     },
     'gpt': {
       label: 'GPT-4o',
-      data: [65, 59, 22, 33, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [34, 56, 68, 51, 52],
+      fill: false,
+      backgroundColor: 'rgba(99, 132, 200, 0.2)',
+      borderColor: 'rgb(99, 132, 255)',
+      pointBackgroundColor: 'rgb(99, 132, 255)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    },
-    'gemini': {
-      label: 'Gemini-v1.5-flesh',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(99, 132, 255)'
     },
     'phi': {
       label: 'Phi3-vision-128k-instruct',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
+      data: [25, 23, 20, 25, 20],
+      fill: false,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgb(255, 99, 132)',
       pointBackgroundColor: 'rgb(255, 99, 132)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgb(255, 99, 132)'
+    },
+    'internvl': {
+      label: 'internvl-chat-v1-5',
+      data: [28, 32, 23, 36, 35],
+      fill: false,
+      backgroundColor: 'rgba(99, 200, 132, 0.2)',
+      borderColor: 'rgb(99, 255, 132)',
+      pointBackgroundColor: 'rgb(99, 255, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(99, 255, 132)'
     },
     'deepseek': {
       label: 'DeepSeek-vl-7b-chat',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [25, 25, 19, 29, 21],
+      fill: false,
+      backgroundColor: 'rgba(155, 0, 132, 0.2)',
+      borderColor: 'rgb(155, 99, 132)',
+      pointBackgroundColor: 'rgb(155, 99, 132)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(155, 99, 132)'
     },
-    'intern': {
+    'internlm': {
       label: 'InternLM-Xcomposer2-7b-chat',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [21, 26, 19, 28, 28],
+      fill: false,
+      backgroundColor: 'rgba(0, 200, 200, 0.2)',
+      borderColor: 'rgb(200, 200, 200)',
+      pointBackgroundColor: 'rgb(200, 200, 200)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(200, 200, 200)'
     },
     'llava': {
       label: 'Llava-v1.6-Mistral-7b',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [25, 23, 10, 25, 20],
+      fill: false,
+      backgroundColor: 'rgba(155, 155, 32, 0.2)',
+      borderColor: 'rgb(155, 155, 32)',
+      pointBackgroundColor: 'rgb(155, 155, 32)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(155, 155, 32)'
     },
     'qwen': {
       label: 'Qwen2-vl-7b',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
+      data: [29, 30, 29, 27, 20],
+      fill: false,
+      backgroundColor: 'rgba(200, 99, 200, 0.2)',
+      borderColor: 'rgb(255, 99, 255)',
+      pointBackgroundColor: 'rgb(255, 99, 255)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    },
-    'random': {
-      label: 'Random',
-      data: [65, 59, 90, 81, 56],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
+      pointHoverBorderColor: 'rgb(255, 99, 255)'
     },
   }
 
@@ -447,7 +412,7 @@
   
   const data = {
     labels: [
-      'Sleeping',
+      'Perception Reasoning',
       'Designing',
       'Coding',
       'Cycling',
@@ -462,6 +427,8 @@
     options: {
       scales: {
         r: {
+          suggestedMin: 20,
+          suggestedMax: 40,
         }
       }
     }
