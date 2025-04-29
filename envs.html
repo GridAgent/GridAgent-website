@@ -202,7 +202,8 @@
       "description": "In this task, the agent is required to classify the objects in the grid into different categories based on their attributes. The agent must identify and categorize the objects correctly to complete the task.",
       "action_space": "The agent can select an object in the grid and classify it into one of the categories.",
       "goal": "The agent's goal is to correctly classify all objects in the grid into their respective categories.",
-      "termination_conditions": "The task is terminated when the agent has correctly classified all objects in the grid."
+      "termination_conditions": "The task is terminated when the agent has correctly classified all objects in the grid.",
+      "image": "./static/images/classification.gif",
     },
   }
 
@@ -216,7 +217,7 @@
       const objective = document.getElementById("goal");
       const termination_conditions = document.getElementById("termination");
 
-      image.src = "./static/images/" + hash + ".gif";
+      image.src = information[hash].image;
       name.innerHTML = information[hash].name;
       description.innerHTML = information[hash].description;
       action_space.innerHTML = information[hash].action_space;
