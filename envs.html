@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="content here">
+  <meta name="keywords" content="Environment, MLLM, Agent, Reasoning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+    
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<section class="hero" style="background-color: rgba(0, 0, 0, 0.7);">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="header-background">
+            <img src="static/images/classification.gif"/>
+            <img src="static/images/counting.gif"/>
+            <img src="static/images/memory.gif"/>
+            <img src="static/images/sorting.gif"/>
+            <img src="static/images/memory_sequence.gif"/>
+            <img src="static/images/puzzle.gif"/>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content" style="height: 896px">
+          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">GridAgent Team</a>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-left" id="name"></h2>
+        <img id="display-image"/>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Description</h2>
+        <div class="content has-text-justified">
+          <p id="description"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Action Space</h2>
+        <div class="content has-text-justified">
+          <p id="action-space"> </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Goal</h2>
+        <div class="content has-text-justified">
+          <p id="goal"> </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Termination</h2>
+        <div class="content has-text-justified">
+          <p id="termination"> </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="column has-text-centered">
+    <a href="index.html" class="button is-link">返回主页</a>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
+
+<script>
+  information = {
+    "classification": {
+      "name": "Classification",
+      "description": "In this task, the agent is required to classify the objects in the grid into different categories based on their attributes. The agent must identify and categorize the objects correctly to complete the task.",
+      "action_space": "The agent can select an object in the grid and classify it into one of the categories.",
+      "goal": "The agent's goal is to correctly classify all objects in the grid into their respective categories.",
+      "termination_conditions": "The task is terminated when the agent has correctly classified all objects in the grid."
+    },
+  }
+
+
+    window.onload = function() {
+      const hash = window.location.hash.substring(1);
+      const name = document.getElementById("name");
+      const description = document.getElementById("description");
+      const image = document.getElementById("display-image");
+      const action_space = document.getElementById("action-space");
+      const objective = document.getElementById("goal");
+      const termination_conditions = document.getElementById("termination");
+
+      image.src = "./static/images/" + hash + ".gif";
+      name.innerHTML = information[hash].name;
+      description.innerHTML = information[hash].description;
+      action_space.innerHTML = information[hash].action_space;
+      objective.innerHTML = information[hash].goal;
+      termination_conditions.innerHTML = information[hash].termination_conditions;
+    }
+</script>
